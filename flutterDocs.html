@@ -1,0 +1,1084 @@
+<!-- Change App Name (Android) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Ticket Support - Documentation</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+	<link
+		href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return; n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+			n.queue = []; t = b.createElement(e); t.async = !0;
+			t.src = v; s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'../../../connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '2223805407931076');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=2223805407931076&amp;ev=PageView&amp;noscript=1" /></noscript>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88404643-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-88404643-1');
+	</script>
+
+</head>
+
+<body>
+	<nav>
+		<div class="menu-bar sidenav-menubar">
+			<div class="menubar-icon">
+				<span class="first-line"></span>
+				<span class="middle-line"></span>
+				<span class="last-line"></span>
+			</div>
+		</div>
+		<div class="sidebar-top">
+			<div class="brand-logo">
+				<a href="">
+					<img src="./assets//images/Screenshot 2024-06-20 150443.png" class="me-2" style="margin-right: 20px;" alt="">
+					<h2 class="ms-2 logoText text-nowrap" style="color: #e60a57;font-size: 23px;">Ticket Support</h2>
+				</a>
+			</div>
+		</div>
+		<div class="sidenav">
+			<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex position-fixed" style="left:0;">
+
+				<div id="doc-nav" class="doc-nav">
+
+					<nav id="doc-menu" class="doc-menu  sticky">
+						<span class="sidebar-heading">Main</span>
+						<a class="nav-link scrollto" href="#Introduction"> Introduction</a>
+						<a class="nav-link scrollto" href="#Prerequisites"> React Project Setup</a>
+						<span class="sidebar-heading">FIREBASE</span>
+
+						<a class="nav-link scrollto" href="#Firebase-Configuring"> Configure
+							Firebase</a>
+						<!-- <a class="nav-link scrollto" href="#Push-Notification-Cloud-Function"> Push Notification
+						</a>
+						<a class="nav-link scrollto" href="#Google-Login-Configuration">Google
+							Sign In
+							Configuration</a>
+
+						<a class="nav-link scrollto" href="#Phone-Login-Configuration">Phone
+							Sign In
+							Configuration</a>
+
+						<a class="nav-link scrollto" href="#EmailPassword-Login-Configuration">Email
+							Sign In
+							Configuration</a> -->
+
+						<!-- <a class="nav-link scrollto" href="#appleSignIn">Apple
+								Sign In
+								Configuration</a> -->
+
+						<!-- <a class="nav-link scrollto" href="#fmcToken">Setup FMC Token</a> -->
+						<!-- <span class="sidebar-heading">PROJECT CHANGE</span>
+
+						<a class="nav-link scrollto" href="#build-run">Importing Project
+
+						</a>
+						<a class="nav-link scrollto" href="#setupbaseURLKey">SetUp baseurl and key
+						</a>
+
+						<a class="nav-link scrollto" href="#changePackageName">Change Package Name
+						</a>
+						<a class="nav-link scrollto" href="#changeAppColor">Change App Color
+						</a>
+						<a class="nav-link scrollto" href="#changeAppIcon">Change App Icon
+						</a>
+						<a class="nav-link scrollto" href="#Change-App-Name">Change App Name
+						</a>
+						<a class="nav-link scrollto" href="#Build-DebugAPK">Build Debug APK
+						</a>
+						<a class="nav-link scrollto" href="#Release-APK">
+							Release-APK
+						</a> -->
+						<a class="nav-link scrollto mb-4" href="#contact-us">Contact Us</a>
+
+					</nav>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<header class="header">
+		<section class="page-head">
+			<div class="menu-bar">
+				<div class="menu-bar-icon">
+					<span class="first-line"></span>
+					<span class="middle-line"></span>
+					<span class="last-line"></span>
+				</div>
+			</div>
+			<div class="page-head-inner">
+
+				<div class="content-tabs ">
+					<div class="brand-logo logo-md">
+						<a href="">
+							<img src="./assets//images/saaslogo.png" class="me-2" style="margin-right: 20px;" alt="">
+							<h2 class="ms-2 logoText text-nowrap" style="color: #e60a57 ;">Salon (SaaS)</h2>
+						</a>
+					</div>
+					<ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<a href="./backendDocs.html" class="nav-link ">Backend</a>
+						</li>
+						<li class="nav-item" role="presentation">
+							<a href="./flutterDocs.html" class="nav-link current">Frontend</a>
+						</li>
+
+					</ul>
+
+				</div>
+			</div>
+		</section>
+	</header>
+
+	<main class="content-inner">
+		<section id="Introduction">
+			<div class="doc-section">
+
+				<h2 class="section-title">Introduction </h2>
+				<div class="section-block">
+					<p class="lead text-secondary ">Hey there, We are happy to see you as our
+						valuable
+						customer of ticket support web app. Here is the easy documentation to
+						set the app and ready to launch.The documentation
+						contains valuable information, so please read it
+						attentively. Should you need any guidance or have
+						inquiries, our support is just a message away.
+					</p>
+				</div>
+			</div>
+
+		</section>
+
+		<section id="Prerequisites">
+
+			<!-- <div class="doc-section">
+				<h2 class="section-title">React Project Setup</h2>
+				<div class="list-section">
+
+					<ul class="display-table">
+						<li>React Setup <a href="https://react.dev/learn"
+								target="_blank">Learn React</a>
+							(We have used React
+							version  18.2.0)</li>
+
+						<li>To edit this project you must have React and
+							Dart
+							installed and configured successfully on
+							your computer.</li>
+
+						<li>If you have got Android SDK installed and
+							configured, to install Flutter you only need to:
+							<ul>
+								<li>
+									Download Flutter SDK from official
+									website
+									and extract it.
+								</li>
+								<li>
+									Add path to previously extracted SDK to
+									your
+									PATH variable
+								</li>
+								<li>
+									Run flutter doctor tool to check if
+									everything is configured correctly.
+								</li>
+								<li>
+									All above steps are mentioned here: <a
+										href="https://flutter.dev/docs/get-started/install/">https://flutter.dev/docs/get-started/install/</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div> -->
+		</section>
+
+		<section id="Prerequisites">
+			<h4 class="section-title">Frontend Configuration</h4>
+			<div class="list-section">
+				<ul>
+					<li class="lead">
+						Now open admin frontend code in any code editor like <b>VS code</b>
+					</li>
+					<li class="lead">
+						Now Open Terminal (Check in the image below)
+					</li>
+					<img src="assets/images/frontendConfing.png" class="myImage" />
+
+					<li class="lead">For install packages (execute in
+						Terminal)
+						<b class="text-dark">npm install
+							--force</b>
+					</li>
+
+					<img src="assets/images/npmInstall.png" id="frontKey" />
+
+					<li class="lead">
+						There in the <b class="text-dark">baseURL</b>
+						Replace
+						the <b class="text-dark">
+							https://yourdomain.com/</b> to
+						Your Domain.
+					</li>
+
+					<li class="lead">Modify the<b class="text-dark"> Secret
+							Key
+							within the "src > component > utils > config.js"</b> file same as<b class="text-dark"><a
+								href="#secretKey" class="scrollto">back-end</a></b>,
+						as shown
+						in
+						the image below</li>
+
+					<img src="assets/images/image.png" />
+					<li class="lead">To update the project name you can
+						<b>update project name</b> in <b>"title" tag
+						</b>(check in image below)
+					</li>
+
+					<li class="lead">To update the <b>project logo</b>,
+						simply change project logo with the <b>filename
+							"logo.png,"</b> ensuring that the <b>file name
+							remains unchanged.</b></li>
+					<img src="assets/images/changeName.png" />
+					<li class="lead">Next, execute the following command in
+						your
+						terminal: <b class="text-dark"> npm start</b>. This
+						command will initiate the specified process or
+						application.</li>
+					<img src="assets/images/npmStart.png" />
+
+					<li>Next, execute the following command in your
+						terminal:<b> npm run build</b>.
+
+					</li>
+					<img src="assets/images/npmrun.png" />
+					<li>
+						After the build
+						process is initiated, <b>follow below steps </b>
+						<ul>
+							<li> create <b> public </b> folder If doesn't exist in your server,</li>
+							<li>
+								Transfer all files and folder of build to <b> public folder </b> in server
+							</li>
+							<li>By following these steps, admin panel will be deployed and accessible through your
+								server's URL. </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="list-section">
+				<ul>
+					<li class="lead">
+						Now,
+						<b>access the Ticket Support Admin and Developer</b> by signUp.
+					</li>
+				</ul>
+
+				<p style="font-weight: 600;">Admin Panel</p>
+				<img src="assets/images/Screenshot 2024-06-20 142946.png" />
+				<p style="font-weight: 600;">Developer Panel</p>
+				<img src="assets/images/Screenshot 2024-06-20 143109.png" />
+			</div>
+		</section>
+
+		<section id="Firebase-Configuring" class="doc-section">
+			<div class="doc-section">
+
+				<h2 class="section-title">Configure Firebase</h2>
+				<div class="section-block">
+
+					<div class="list-section">
+						<ul>
+							<li class="lead">
+								Go to the firebase project you might created
+								while
+								following backend documentation.
+							</li>
+							<li class="lead">If you don't have, follow the steps
+								below and create one project.</li>
+							<li class="lead">At first, follow this link
+								<b><a href="https://firebase.google.com/" target="_blank">
+										https://firebase.google.com/</a></b>
+							</li>
+						</ul>
+					</div>
+					<div><img width="876" height="493" src="assets/images/firebase1.png" />
+					</div>
+
+					<div class="list-section">
+						<ul>
+							<li class="lead">
+								Now, Our first step is to establish a Firebase
+								project. A Firebase project serves as a
+								foundational
+								container, enabling us to create and manage
+								various
+								apps within it. Within Firebase, multiple
+								projects
+								can be created.
+							</li>
+						</ul>
+					</div>
+
+					<div><img width="876" height="493" src="assets/images/firebase2.png" />
+					</div>
+					<div class="list-section">
+						<ul>
+							<li class="lead">
+								Now, we have to give a name to the project,
+								enable Google Analytics for the project, set an
+								analytics location, and accept all the terms and
+								conditions. Firebase console automatically
+								creates a
+								unique id for the project.
+							</li>
+						</ul>
+					</div>
+
+
+					<div class="list-section">
+						<ul>
+							<li class="lead">
+								<b class="text-dark">
+								</b>Assigning a unique name to the Firebase
+								project
+							</li>
+						</ul>
+					</div>
+					<div><img width="876" height="493" src="assets/images/firebase3.png" />
+					</div>
+					<div class="list-section">
+						<ul>
+							<li class="lead">
+								<b class="text-dark">
+								</b>Enable Google analytics for the project
+							</li>
+						</ul>
+					</div>
+					<div><img width="876" height="493" src="assets/images/firebase4.png" />
+					</div>
+					<div class="list-section">
+						<ul>
+							<li class="lead">
+								<b class="text-dark">
+								</b>First Choose default Firebase account and
+								then
+								create project
+							</li>
+						</ul>
+					</div>
+					<div>
+						<img width="876" height="493" src="assets/images/firebase5.png" />
+					</div>
+					<div><img width="876" height="493" src="assets/images/firebase6.png" />
+					</div>
+					<h4 class="section-title">Web App</h4>
+					<div>
+						<h6 style="font-weight: normal;color: #e60a57;">Web Select Option</h6>
+						<img width="876" height="493" src="assets/images/firebase7.jpeg" />
+					</div>
+					<div<h6 style="font-weight: normal;color: #e60a57;">Your App Name Add after Register App Click</h6>
+						<img width="876" height="493" src="assets/images/firebase8.png" />
+					</div>
+					<div>
+						<h6 style="font-weight: normal;color: #e60a57;">This Firebase Config Code Copy</h6>
+						<img width="876" height="493" src="assets/images/Screenshot 2024-06-20 144340.png" />
+					</div>
+					<div>
+						<h6 style="font-weight: normal;color: #e60a57;">Firebase config Code Paste</h6>
+						<img width="876" height="493" src="assets/images/WhatsApp Image 2024-06-19 at 2.37.58 PM.jpeg" />
+					</div>
+					<div>
+						<h6 style="font-weight: normal;color: #e60a57;">Open Firebase Dashboard and This Project Setting Open and Generate Key Pair</h6>
+						<img width="876" height="493" src="assets/images/Screenshot 2024-06-20 145304.png" />
+					</div>
+					<div>
+						<h6 style="font-weight: normal;color: #e60a57;">This Key Copy And Your Project Firebase Config file public key set</h6>
+						<img width="876" height="493" src="assets/images/Screenshot 2024-06-20 145525.png" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- <section id="Push-Notification-Cloud-Function">
+			<div class="doc-section">
+				<div class="list-section">
+					<ul>
+
+						<h4 id="cutomization" class="section-title"> Push
+							Notification </h4>
+
+						<li>Go to the Project Setting (refer below image)
+						</li>
+						<img src="assets/images/add app.png" />
+						<li>Then Click onCloud Messaging and
+							Copy the server key and paste into notepad (this
+							is use in
+							node
+							js Project [backend])</li>
+
+						<img src="assets/images/icon.png" />
+					</ul>
+				</div>
+
+
+
+
+
+			</div>
+		</section>
+
+		<section id="Google-Login-Configuration" class="doc-section">
+			<h2 class="section-title"> Google Sign In Configuration </h2>
+			<div class="section-block">
+
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Click to Authentication and sign in method tab
+						</li>
+						<img src="assets/images/Screenshot_13.png">
+						<li class="lead">Click to Enable </li>
+						<li class="lead">Select your support email and save</li>
+						<img src="assets/images/G0.png">
+						<li class="lead">Your google sign In successfully Enable</li>
+
+						<img src="assets/images/google_3.png">
+
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="Phone-Login-Configuration" class="doc-section">
+			<h2 class="section-title"> Phone Sign In Configuration </h2>
+			<div class="section-block">
+
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Click to Authentication and sign in method tab
+						</li>
+						<li class="lead">Then both button switch to enable and save</li>
+						<img src="assets/images/phoneLogin.png">
+						<li class="lead">Your phone sign In successfully Enable</li>
+						<img src="assets/images/DonephoneLogin.png">
+
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="EmailPassword-Login-Configuration" class="doc-section">
+			<h2 class="section-title"> Email-Password Sign In Configuration </h2>
+			<div class="section-block">
+
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Click to Authentication and sign in method tab
+						</li>
+						<li class="lead">Then click on email/password provider</li>
+						<img src="assets/images/email_1.png">
+
+						<li class="lead">Then both button switch to enable and save</li>
+						<img src="assets/images/EmailPassLogin.png">
+
+						<li class="lead">Your email and password successfully Enable</li>
+						<img src="assets/images/DoneEmailLogin.png">
+
+					</ul>
+				</div>
+
+			</div>
+		</section> -->
+
+		<!-- <section id="appleSignIn">
+			<div class="doc-section">
+				<h2 class="section-title mb-3">Apple Sign In Configuration</h2>
+
+				<div class="list-section">
+					<ul>
+						<li>Click to Authentication and sign in mathod tab</li>
+						<li>Then click to apple provider
+						</li>
+						<img src="assets/images/apple_1.png" alt="">
+						<li>Click to Enable and save it
+						</li>
+						<img src="assets/images/apple_2.png" alt="">
+						<li>your apple provider Successfully Enable
+						</li>
+						<img src="assets/images/apple_3.png" alt="">
+					</ul>
+				</div>
+			</div>			
+		</section> -->
+
+		<!-- <section id="fmcToken">
+			<div class="doc-section">
+				<h2 class="section-title mb-3">Setup FMC Token</h2>
+				<div class="list-section">
+					<ul>
+						<li>Follow <a href="firebaseServerKey/doc.html">This guide</a> and setup FCM Token at firebase project and get <b>server key.</b>
+						</li>
+						<li>Paste the same at Your flutter project, at this location <b>const_res.dart</b>
+						</li>
+						<img src="assets/images/fcm_4.png" alt="">
+					</ul>
+				</div>
+			</div>		
+		</section> -->
+
+		<!-- <section id="build-run">
+			<div class="doc-section">
+				<div class="list-section">
+					<ul>
+
+						<h2 class="section-title">Importing Project
+						</h2>
+
+						<li>To import the app, simply open Android Studio and
+							import/open
+							the template. Make sure to wait for
+							all the processes (the Gradle Build) to complete
+							before
+							continuing to the next step
+						</li>
+
+
+
+
+
+						<img src="assets/images/Screenshot_1.png">
+
+						<li class="lead">Set up your editor – Install the
+							<b>Flutter and
+								Dart
+								plugins</b>.
+						</li>
+						<li class="lead">To install Flutter and
+							Dart
+							plugins firstly,<b> click on setting button </b>on
+							corner
+							and one pop-up will come up<b> "plugins"</b> and
+							enter your
+							<b>plugins name you want to install</b> ( check in
+							image
+							below )
+						</li>
+
+						<div class="image-box"><a href="assets/images/installpluges.png" target="_blank">
+								<img src="assets/images/installpluges.png"></a>
+						</div>
+						<li><b>Click on the Open</b> and open your project </li>
+
+
+
+
+						<div class="image-box"><a href="assets/images/Screenshot_2.png" target="_blank"><img
+									src="assets/images/Screenshot_2.png"></a>
+						</div>
+						<li>As soon as,one pop-up will come up and <b>select the
+								your project</b> and then click on <b>"Ok"
+								button</b></li>
+
+
+						<div class="image-box"><a href="assets/images/Screenshot_3.png" target="_blank"><img
+									src="assets/images/Screenshot_3.png"></a>
+						</div>
+
+						<li>Addition steps Sometimes, the Gradle Build fails. In
+							some
+							cases additional components are needed,
+							Android Studio will ask you to do download these
+							additional
+							SDK components in the 'messages' tab,
+							simply follow the instructions provided to install
+							and
+							download the additional components. </li>
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="setupbaseURLKey">
+			<div class="doc-section">
+				<h2 class="section-title mb-3">Setup BaseUrl and Key</h2>
+
+				<div class="list-section">
+					<ul>
+						<li>Change baseUrl and key in <b>lib -> buinesslogic ->
+								apiservice -> app_url.dart</b> as shown in the
+							image below</li>
+						<div class="image-box"><a href="assets/images/setupKeyBaseURlFultter.png" target="_blank"><img
+									src="assets/images/setupKeyBaseURlFultter.png"></a>
+						</div>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="changePackageName">
+			<div class="doc-section">
+				<h2 class="section-title mb-3">Change Package Name</h2>
+
+				<div class="list-section">
+					<ul>
+						<li><b>Android</b>
+							<ul>
+								<li>Go to <b>android > app</b></li>
+								<li>Click <b>to build.gradle</b></li>
+								<li>Here, change the <b>applicationId</b> And it's done.</li>
+								<img src="assets/images/android_package_name.png" alt="" class="img-fluid">
+							</ul>
+						</li>
+						<li><b>IOS</b>
+							<ul>
+								<li>
+									Now right click on<b> iOS</b> directory, <b>flutter > Open iOS module in Xcode</b>
+								</li>
+								<img src="assets/images/iOS_package_name_1.png" alt="" class="img-fluid">
+
+								<li>Once the project gets opened in Xcode successfully, follow the steps below.
+									<ul>
+										<li> Go to <b>runner > Signing & Capabilities</b></li>
+										<li>Change your <b>bundle identifier</b> as you want, and it's done.</li>
+										<img src="assets//images/iOS_package_name_2.png" alt="" class="img-fluid">
+
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="changeAppColor">
+			<div class="doc-section">
+				<h2 class="section-title mb-3">Change App Color</h2>
+
+				<div class="list-section">
+					<ul>
+						<li> Go to your project <b>lib > utils > color_res.dart</b> as shown in the below image.</li>
+						<img src="assets/images/change_app_color.png" alt="">
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="changeAppIcon">
+			<div class="doc-section">
+				<h2 class="section-title mb-3">Change App Icon</h2>
+
+				<div class="list-section">
+					<ul>
+						<li> For Generating Different Sized Icons <br>
+						</li>
+						<li>Go to<a href="https://www.appicon.co/" target="_blank">https://www.appicon.co/</a> and
+							<b>upload</b> the
+							icon image and tick the <b>iPhone</b> and <b>Android</b> options and <b>click on
+								Generate</b>. This site
+							generates different sized Icons for both android and IOS at the same time
+						</li>
+
+						<img src="assets/images/change_icon_1.png" alt="">
+						<li>It will Download the Zip file named AppIcons with the android and Assets.xcassets named
+							folders along
+							with images for appstore and playstore which can be directly uploaded as an icon in both the
+							stores</li>
+						<img src="assets/images/change_icon_2.png" alt="">
+						<li>Now, open your Project in Android Studio.
+
+						</li>
+						<li><b>Android</b><br>
+							Navigate to <b>android/app/src/main/res </b>and right-click on res folder and click "open in
+							Finder". Now
+							delete all the mipmap folders in res folder and paste the mipmap folders from
+							AppIcon/android folder which
+							you have downloaded.
+						</li>
+						<img src="assets/images/change_icon_4.png" alt="">
+						<li><b>IOS</b><br>
+							Now navigate to the <b>ios/Runner/Assets.xcassets</b>. Now after you are in Runner folder,
+							right-click on
+							Runner folder and click “open in Finder”. Now delete the Assets.xcassets folder and paste
+							the
+							Assets.xcassets folder from AppIcon/Assets.xcassets which you have downloaded.
+						</li>
+						<img src="assets/images/change_icon_3.png" alt="">
+						<li>After manually changing the images in android and IOS folders now go to lib/main.dart and
+							run the
+							flutter project using the below command in the flutter console.
+
+						</li>
+						<code>flutter run</code>
+						<img src="assets/images/change_icon_5.png" alt="">
+					</ul>
+				</div>
+			</div>
+		</section> -->
+
+		<!-- <section id="Change-App-Name">
+			<div class="doc-section">
+				<h2 class="mb-3 section-title">Change App Name </h2>
+				<div class="list-section">
+					<ul>
+						<li><b>Andriod</b>
+							<ul>
+								<li>
+									Go to android > app > src > main >
+									AndroidManifest.xml and make changes shown
+									in the below image.
+								</li>
+
+							</ul>
+						</li>
+						<div class="image-box"><a href="assets/images/change_app_name.png" target="_blank"><img
+									src="assets/images/change_app_name.png"></a>
+						</div>
+						<li><b>IOS</b>
+							<ul>
+								<li>
+									Now right click on iOS directory > Runner >
+									info.plist Open iOS module in Xcode
+								</li>
+							</ul>
+						</li>
+
+						<div class="image-box"><a href="assets/images/change_app_name_ios.png" target="_blank"><img
+									src="assets/images/change_app_name_ios.png"></a>
+						</div>
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="Build-DebugAPK">
+			<div class="doc-section">
+				<div class="list-section">
+					<ul>
+
+						<h2 id="cutomization" class="section-title">Build Debug
+							APK
+						</h2>
+						<li>APK (Application Package File) is a format used by
+							Android
+							operating systems for distribution and
+							installation. After you build an application, it's
+							quite
+							common to build APK files to be tested across
+							different devices. </li>
+						<li> If the application is developed using
+							Flutter, you can easily build APK files by
+							using flutter build apk command. In this
+							documentation we
+							show you how to build APK files for Android
+							using Flutter.</li>
+						<li>This includes how to set the mode (release,
+							debug, or profile), set the main entry point,
+							split per ABI, set target platforms, set the build
+							name and
+							version, build flavor APK, and obfuscate the
+							code.</li>
+
+						<ul>
+							<li class="list"><b>Go to project
+									location->Build->Flutter->Build APK</b></li>
+							<a href="assets/images/buildFulter.png" target="_blank">
+								<img src="assets/images/buildFulter.png">
+							</a>
+						</ul>
+
+				</div>
+
+			</div>
+		</section>
+
+		<section id="Release-APK">
+			<div class="doc-section">
+				<div class="list-section">
+					<ul>
+
+						<h2 class="section-title" id="cutomization">Release APK
+						</h2>
+
+						<li>
+							Run the following command <b>"flutter build APK
+								--release"</b> as shown in <b>image below</b>
+						</li>
+						<div class="image-box">
+							<a href="assets/images/flutterBuild.png" target="_blank">
+								<img src="assets/images/flutterBuild.png" alt="logo">
+							</a>
+						</div>
+						<li>
+							Once you have successfully generated the APK as
+							shown in the image below, it will be automatically
+							saved to the specified destination.</b></li>
+						<div class="image-box">
+							<a href="assets/images/fluterBuildPath.png" target="_blank">
+								<img src="assets/images/fluterBuildPath.png" alt="logo">
+							</a>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="Release-APK">
+			<div class="doc-section">
+				<div class="list-section">
+					<ul>
+
+						<h2 class="section-title" id="cutomization">Release APK
+						</h2>
+
+						<li>
+							Run the following command <b>"flutter build APK
+								--release"</b> as shown in <b>image below</b>
+						</li>
+						<div class="image-box">
+							<a href="assets/images/flutterBuild.png" target="_blank">
+								<img src="assets/images/flutterBuild.png" alt="logo">
+							</a>
+						</div>
+						<li>
+							Once you have successfully generated the APK as
+							shown in the image below, it will be automatically
+							saved to the specified destination.</b></li>
+						<div class="image-box">
+							<a href="assets/images/fluterBuildPath.png" target="_blank">
+								<img src="assets/images/fluterBuildPath.png" alt="logo">
+							</a>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</section> -->
+		<!-- <section id="Setup-Agora" class="doc-section">
+			<h2 class="section-title">SetUp Zego</h2>
+			<div class="list-section">
+				<ul>
+
+					<li>Open Zego Cloud console<a href="https://console.zegocloud.com/account/signup
+                        " target="_blank">Click Here
+						</a>
+					</li>
+					<li>
+						Generate Zego App ID
+					</li>
+					<img src="assets/images/zigo1.png">
+
+					<li>For use Live-streaming function you must be generate
+						secret
+						key in
+						Zego Cloud
+						console</li>
+					<li>You can get secret key from here</li>
+					<img src="assets/images/zigo2.png" />
+					<li>Put Zego cloud App Id & Zego cloud App Sign In in admin panel (setting)
+					</li>
+					<img src="assets/images/zigo3.png" />
+				</ul>
+			</div>
+
+		</section> -->
+
+		<div class="blog-section contact-blog space-start mt-3 ml-0" id="contact-us">
+			<div class="contact-blog-inner">
+				<h2 class="section-title mb-4">
+					<fontsninja-text id="fontsninja-text-51" class="fontsninja-family-1935">Want to talk with
+						us?</fontsninja-text>
+				</h2>
+				<p><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+						stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+						<circle cx="12" cy="12" r="4"></circle>
+						<path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94">
+						</path>
+					</svg>
+					<fontsninja-text id="fontsninja-text-54" class="fontsninja-family-1931">Email
+						<a href="mailto:technoproduct001@gmail.com">
+							: technoproduct001@gmail.com
+						</a>
+					</fontsninja-text>
+				</p>
+				<p>
+					<span><fontsninja-text id="fontsninja-text-66" class="fontsninja-family-1931">
+						</fontsninja-text>
+						<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<g>
+								<path fill="none" d="M0 0h24v24H0z"></path>
+								<path fill-rule="nonzero"
+									d="M7.253 18.494l.724.423A7.953 7.953 0 0 0 12 20a8 8 0 1 0-8-8c0 1.436.377 2.813 1.084 4.024l.422.724-.653 2.401 2.4-.655zM2.004 22l1.352-4.968A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.954 9.954 0 0 1-5.03-1.355L2.004 22zM8.391 7.308c.134-.01.269-.01.403-.004.054.004.108.01.162.016.159.018.334.115.393.249.298.676.588 1.357.868 2.04.062.152.025.347-.093.537a4.38 4.38 0 0 1-.263.372c-.113.145-.356.411-.356.411s-.099.118-.061.265c.014.056.06.137.102.205l.059.095c.256.427.6.86 1.02 1.268.12.116.237.235.363.346.468.413.998.75 1.57 1l.005.002c.085.037.128.057.252.11.062.026.126.049.191.066a.35.35 0 0 0 .367-.13c.724-.877.79-.934.796-.934v.002a.482.482 0 0 1 .378-.127c.06.004.121.015.177.04.531.243 1.4.622 1.4.622l.582.261c.098.047.187.158.19.265.004.067.01.175-.013.373-.032.259-.11.57-.188.733a1.155 1.155 0 0 1-.21.302 2.378 2.378 0 0 1-.33.288 3.71 3.71 0 0 1-.125.09 5.024 5.024 0 0 1-.383.22 1.99 1.99 0 0 1-.833.23c-.185.01-.37.024-.556.014-.008 0-.568-.087-.568-.087a9.448 9.448 0 0 1-3.84-2.046c-.226-.199-.435-.413-.649-.626-.89-.885-1.562-1.84-1.97-2.742A3.47 3.47 0 0 1 6.9 9.62a2.729 2.729 0 0 1 .564-1.68c.073-.094.142-.192.261-.305.127-.12.207-.184.294-.228a.961.961 0 0 1 .371-.1z">
+								</path>
+							</g>
+						</svg><fontsninja-text id="fontsninja-text-66" class="fontsninja-family-1931">
+							Whatsapp :
+						</fontsninja-text></span>
+					<a href="https://web.whatsapp.com/send?phone=7265800782" target="_blank">
+						<fontsninja-text id="fontsninja-text-71" class="fontsninja-family-1933">
+							+91 7265800782</fontsninja-text>
+					</a>
+				</p>
+
+				<div class="blog-1"></div>
+			</div>
+		</div>
+	</main>
+
+
+	<script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>>
+
+	<script>
+
+
+
+		const closes = () => {
+			$(".openImages").removeClass("fadeIn_")
+			$(".openImages").addClass("fadeOut_")
+
+		}
+
+
+		// Open Image
+		var g = document.getElementsByClassName('myImage');
+		for (var i = 0, len = g.length; i < len; i++) {
+
+			(function (idx) {
+				g[i].onclick = function () {
+
+					if (idx == (parseInt(g.length) - 1)) {
+						$("#next").addClass("d-none")
+					}
+					if (idx == 0) {
+						$("#pre").addClass("d-none")
+					}
+
+					$("#next").attr("data-num1", idx)
+					$("#pre").attr("data-num2", idx)
+
+					$(".openImages").toggleClass("fadeIn_ fadeOut_")
+					document.getElementById("showImg").src = g[idx].src
+
+				}
+			})(i);
+
+
+
+		}
+		// Image Change Next
+		const next = () => {
+
+			var a = $("#next").attr("data-num1")
+
+			const num = parseInt(a) + parseInt(1)
+			$("#next").attr("data-num1", num)
+			$("#pre").attr("data-num2", num)
+			$("#pre").removeClass("d-none")
+
+			if (num == (parseInt(g.length) - 1)) {
+				$("#next").addClass("d-none")
+			}
+
+
+
+			document.getElementById("showImg").src = g[num].src
+
+			$("#mainPage").addClass(" animate__animated animate__fadeInRight")
+			setTimeout(() => {
+				$("#mainPage").removeClass(" animate__animated animate__fadeInRight")
+			}, 300);
+		}
+
+		// Image Change Previous
+		const pre = () => {
+
+			var a = $("#pre").attr("data-num2")
+
+			const num = parseInt(a) - parseInt(1)
+			$("#next").attr("data-num1", num)
+			$("#pre").attr("data-num2", num)
+			$("#next").removeClass("d-none")
+
+			if (num == -1 || num == 0) {
+
+				$("#pre").addClass("d-none")
+			}
+
+
+			document.getElementById("showImg").src = g[num].src
+
+			$("#mainPage").addClass(" animate__animated animate__fadeInLeft")
+			setTimeout(() => {
+				$("#mainPage").removeClass(" animate__animated animate__fadeInLeft")
+			}, 300);
+
+
+		}
+
+		document.onkeydown = function (event) {
+
+			if (event.key == "ArrowRight") {
+				var a = $("#next").attr("data-num1")
+				const num = parseInt(a) + parseInt(1)
+				if (num != (parseInt(g.length))) {
+					next()
+				}
+			} else if (event.key == "ArrowLeft") {
+				var a = $("#next").attr("data-num1")
+				const num = parseInt(a) + parseInt(1)
+				if (num != 1) {
+					pre()
+
+				}
+			} else if (event.key == "Escape") {
+				closes();
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Salon (SAAS) - Documentation</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+	<script></script>
+	<link
+		href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+	<!-- Facebook Pixel Code -->
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return; n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+			n.queue = []; t = b.createElement(e); t.async = !0;
+			t.src = v; s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'../../../connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '2223805407931076');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=2223805407931076&amp;ev=PageView&amp;noscript=1" /></noscript>
+	<!-- End Facebook Pixel Code -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88404643-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-88404643-1');
+	</script>
+
+</head>
+
+<body>
+	<nav>
+		<div class="menu-bar sidenav-menubar">
+			<div class="menubar-icon">
+				<span class="first-line"></span>
+				<span class="middle-line"></span>
+				<span class="last-line"></span>
+			</div>
+		</div>
+		<div class="sidebar-top">
+			<div class="brand-logo">
+				<a href="">
+					<img src="./assets//images/Screenshot 2024-06-20 150443.png" class="me-2" style="margin-right: 20px;" alt="">
+					<h2 class="ms-2 logoText text-nowrap" style="color: #e60a57;font-size: 23px;">Ticket Support</h2>
+				</a>
+			</div>
+		</div>
+		<div class="sidenav">
+			<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex position-fixed" style="left:0;">
+
+				<div id="doc-nav" class="doc-nav">
+
+					<nav id="doc-menu" class=" doc-menu sticky">
+						<span class="sidebar-heading">Main</span>
+
+						<a class="nav-link scrollto " href="#get-started-section">Introduction</a>
+
+						<a class="nav-link scrollto " href="#server-requirements">Server setup</a>
+						<span class="sidebar-heading">Firebase</span>
+
+						<a class="nav-link scrollto " href="#Database-setup">Setup Database
+						</a>
+						<a class="nav-link scrollto " href="#Firebase-Configuring"> Configure
+							Firebase</a>
+						<a class="nav-link scrollto " href="#Push-Notification-Cloud-Function">Setup Notification
+							(FCM)</a>
+						<span class="sidebar-heading">Setup project</span>
+
+						<a class="nav-link scrollto " href="#Admin-Panel-Configuration">Extracting The
+							Project</a>
+						<a class="nav-link scrollto " href="#Backend-Configuration">Backend Configuration</a>
+						<!-- <a class="nav-link scrollto " href="#frontendConfing">Frontend Admin panel Configuration</a>
+						<a class="nav-link scrollto " href="#salonPanelConfig">Frontend Salon panel Configuration</a> -->
+						<a class="nav-link scrollto mb-4" href="#contact-us">Contact Us</a>
+					</nav>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+	<header class="header">
+		<section class="page-head">
+			<div class="menu-bar">
+				<div class="menu-bar-icon">
+					<span class="first-line"></span>
+					<span class="middle-line"></span>
+					<span class="last-line"></span>
+				</div>
+			</div>
+			<div class="page-head-inner">
+				<div class="content-tabs ">
+					<div class="brand-logo logo-md">
+						<a href="">
+							<img src="./assets//images/saaslogo.png" class="me-2" style="margin-right: 20px;" alt="">
+							<h2 class="ms-2 logoText text-nowrap" style="color: #e60a57 ;">Ticket Support</h2>
+						</a>
+					</div>
+					<ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<a href="./backendDocs.html" class="nav-link current">Backend</a>
+						</li>
+						<li class="nav-item" role="presentation">
+							<a href="./flutterDocs.html" class="nav-link ">Frontend</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</header>
+
+	<main class="content-inner">
+		<section id="get-started-section" class="doc-section">
+			<h2 class="section-title">Introduction</h2>
+			<div class="section-block">
+				<p class="lead text-secondary">Hey there, We are happy to see you as our
+					valuable customer
+					of Ticket Support Web app. Here is the easy documentation to set the app
+					and ready to
+					launch.The documentation contains valuable information, so
+					please read it attentively. Should you need any guidance or
+					have inquiries, our support is just a message away.
+				</p>
+			</div>
+		</section>
+
+		<section id="server-requirements" class="doc-section">
+			<h2 class="section-title">Server Setup</h2>
+			<div class="list-section">
+
+				<ul class="mb-0">
+					<li>VPS server required</li>
+					<li style="font-weight:bold ">Preferred Hosting</li>
+
+					<ul class="pl-3 preferHosting">
+						<li>Digital ocean (Initial Server Setup with Ubuntu
+							22.04)
+						</li>
+						<li>AWS</li>
+						<h5 class="mt-2">Create your VPS Server in Digital Ocean & Get
+							200$ Free for 2 months<a
+								href="https://www.digitalocean.com/?refcode=7370b478e2d7&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=CopyPaste"
+								target="_blank">Click Here</a></h5>
+						<a class="ml-2"
+							href="https://www.digitalocean.com/?refcode=7370b478e2d7&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=CopyPaste"
+							target="_blank"><img
+								src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg"
+								alt="DigitalOcean Referral Badge" class="myImage my-0" /></a>
+					</ul>
+
+					<li style="font-weight:bold" class="mt-4">The following service must be installed on the VPS server
+					</li>
+					<ul class="pl-3 preferHosting">
+						<li>Node Version Manager (nvm) with preferred version 16.15.1</li>
+						<li>PM2 (Process Manager 2)</li>
+						<li>Nginx web server</li>
+						<li>Node Package Manage (npm)</li>
+					</ul>
+
+
+					</li>
+				</ul>
+			</div>
+			</div>
+		</section>
+
+
+		<section id="Database-setup" class="doc-section">
+			<h2 class="section-title">Setup Database</h2>
+			<div class="section-block">
+
+				<div class="list-section">
+					<ul class="pl-0">
+						<li>
+							<a href="https://account.mongodb.com/account/register" target="_blank">Click
+								here</a>to know the
+							steps.
+							to create mongodb Account.<a>
+							</a>
+						</li>
+					</ul>
+				</div>
+				</p>
+				<img src="assets/images/createdb.png" />
+				<img src="assets/images/mogodbquestion.png" />
+				<img src="assets/images/freecluster.png" />
+				<img src="assets/images/createcluster.png" />
+				<img src="assets/images/skip.png" />
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">Now, We will create a user to
+							access the
+							database.</li>
+						<li class="lead">
+							Like as shown in the image, enter username and
+							password.</li>
+						<li class="lead">Click on create user and user will
+							be created.
+						</li>
+					</ul>
+				</div>
+
+
+				<img src="assets/images/mongodbuser.png" />
+
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">Click on <b class="text-dark">Connect</b> to connect
+							cluster0 you can see like image below.</li>
+
+					</ul>
+				</div>
+
+				<img src="assets/images/connect.png" />
+
+				<div class="list-section">
+					<ul>
+						<a id="mongodbString" class="mb-0"></a>
+						<li class="lead">If you don't have MongoDB Compass
+							then Click on
+							<b class="text-dark">I
+								do
+								not
+								have
+								MongoDB
+								Compass</b> and then click on<b class="text-dark"> Download
+								Compass</b>
+							and copy Connection String and paste it into
+							notepad.
+						</li>
+					</ul>
+				</div>
+				<img src="assets/images/getConnectionString.png" />
+				<div class="list-section">
+					<ul>
+						<li class="lead">Open MongoDB Compass and <b class="text-dark">paste your
+								mongoDB Connection
+								String.</b>
+						</li>
+					</ul>
+				</div>
+				<a id="connectionString">
+					<img src="assets/images/compassConnect.png" />
+				</a>
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							After <b class="text-dark">Clicking on Databases button</b> to <b class="text-dark">
+								Create Database</b> you
+							will see like below.
+						</li>
+					</ul>
+				</div>
+				<img src="assets/images/craeteDatabase.png" />
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Then to import the collection find the <b class="text-dark">Add Data button</b> on
+							the
+							Top bar and click on it and then click on
+							<b class="text-dark">import
+								file button.</b>
+						</li>
+						<li class="lead">
+							Click on <b class="text-dark"> Select File
+								(BROWSE) button</b> and load
+							the
+							database.json
+							file which will be there in
+							the folder you have extracted.
+						</li>
+						<li class="lead">Click on <b class="text-dark">import button</b> at the
+							bottom of the page.
+						</li>
+						<li class="lead">The database is now fully prepared
+							for
+							utilization.</li>
+
+					</ul>
+				</div>
+				<img src="assets/images/importAdmin.png" />
+				<p class="text-danger mt-2 mb-0">
+					<b style="font-size: 18px;">Note: </b>
+				</p>
+				<div class="list-section">
+					<ul class="m-0">
+						<li class="lead m-0 mt-2">
+							You need to import the collections<b class="text-dark"> settings</b> into your database.
+						</li>
+					</ul>
+				</div>
+
+		</section>
+		<section id="Firebase-Configuring" class="doc-section">
+			<h2 class="section-title"> Configure Firebase </h2>
+			<div class="section-block">
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Go to the firebase project you might created while
+							following backend documentation.
+						</li>
+						<li class="lead">If you don't have, follow the steps
+							below and create one project.</li>
+						<li class="lead">At first,<b class="text-dark"> follow this link</b>
+							<b><a href="https://firebase.google.com/"
+									target="_blank">https://firebase.google.com/</a></b>
+						</li>
+					</ul>
+				</div>
+				<div><img width="876" height="493" src="assets/images/firebase1.png" />
+				</div>
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Now, Our first step is to establish a Firebase
+							project. A Firebase project serves as a foundational
+							container, enabling us to create and manage various
+							apps within it. Within Firebase, multiple projects
+							can be created.
+						</li>
+					</ul>
+				</div>
+
+				<div><img width="876" height="493" src="assets/images/firebase2.png" />
+				</div>
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Now, we have to give a name to the project,
+							enable Google Analytics for the project, set an
+							analytics location, and accept all the terms and
+							conditions. Firebase console automatically creates a
+							unique id for the project.
+						</li>
+					</ul>
+				</div>
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							<b class="text-dark">
+							</b>Assigning a unique name to the Firebase project
+						</li>
+					</ul>
+				</div>
+				<div><img width="876" height="493" src="assets/images/firebase3.png" />
+				</div>
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							<b class="text-dark">
+							</b>Enable Google analytics for the project
+						</li>
+					</ul>
+				</div>
+				<div><img width="876" height="493" src="assets/images/firebase4.png" />
+				</div>
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							<b class="text-dark">
+							</b>First Choose default Firebase account and then
+							create project
+						</li>
+					</ul>
+				</div>
+				<div><img width="876" height="493" src="assets/images/firebase5.png" />
+				</div>
+				<div><img width="876" height="493" src="assets/images/firebase6.png" />
+				</div>
+
+			</div>
+		</section>
+		<section id="Push-Notification-Cloud-Function" class="doc-section">
+			<h2 class="section-title"> Setup Notification (FCM)
+			</h2>
+			<div class="list-section">
+				<ul>
+					<li class="lead">
+						Follow<b><a href="./firebaseServerKey/doc.html" target="_blank">This_Guide</a></b>and <b>setup
+							project at
+							firebase and collect Server
+							key</b>.
+					</li>
+					<li class="lead">Go to <b class="text-dark">.env</b>
+						file of the backend project again and make the changes
+						like below.</li>
+				</ul>
+				<a id="fireBaseserverKey">
+					<img src="assets/images/serverKeyFirebase.png" />
+
+					<h5 class="mt-3">SERVER_KEY <span class="lead">=”Your Firebase Server
+							Key”</span></h5>
+				</a>
+
+
+			</div>
+
+		</section>
+
+
+		<section id="Admin-Panel-Configuration" class="doc-section">
+
+			<h2 class="section-title">Extracting The Project
+			</h2>
+			<div class="list-section">
+				<ul>
+					<li class="lead">
+						Extract the folder you have downloaded and open the
+						folder
+
+					</li>
+					<li class="lead">Open it in visual studio code</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="Backend-Configuration">
+
+			<h4 class="section-title">Backend Configuration</h4>
+
+			<div>
+				<div class="list-section">
+					<ul>
+						<li class="lead">
+							Now Open Terminal (Check in the image below)
+						</li>
+
+					</ul>
+				</div>
+
+				<img src="assets/images/openTerminal.png" class="myImage" />
+				<div class="list-section">
+					<ul>
+
+
+						<li class="lead">For install packages (execute in
+							Terminal)
+							<b class="text-dark">npm install
+								--force</b>
+						</li>
+						<img src="assets/images/npmInstall.png" />
+
+					</ul>
+					</ul>
+				</div>
+
+				<div class="list-section">
+					<ul>
+						<li class="lead">Insert the MongoDB connection
+							string
+							go to your
+							<b class="text-dark"> middleware folder -> mongodb.js file.</b>
+
+						</li>
+						<li class="lead">To access the redirection to the
+							MongoDB
+							connection string simply<a href="#connectionString">Click Here</a></li>
+					</ul>
+				</div>
+				<img src="assets/images/setconnectionString.png" />
+				<h2 class="section-title mt-3">Setting Up Credentials To The
+					Project
+					in .env file</h2>
+
+				<div class="list-section">
+					<ul>
+						<li class="lead" id="secretKey">
+							To enhance the security of our code, we should
+							generate
+							a <b>strong secret key</b> using a
+							reliable source like<a href="https://randomkeygen.com/"
+								target="_blank">https://randomkeygen.com/.</a>
+						</li>
+						<li class="lead">This key should be <b>consistently applied
+								across our back-end,<a href="#frontKey" class="scrollto">front-end</a> , and
+							<a href="./flutterDocs.html#setupbaseURLKey">app code </a>	</b> to ensure uniform protection.</li>
+						<li class=" lead"><b c>Change Secret
+								Key</b>
+							in <b>.env file</b> as shown
+							in
+							the image below.</li>
+					</ul>
+				</div>
+
+
+
+
+				<img src="assets/images/secretKey.png" />
+
+				<div class="list-section">
+					<ul>
+						<li class="lead" id="jwtsecretKey">To enhance the security of our
+							code, we
+							should generate a strong <b class="text-dark">JWT
+								Secret
+								Key</b> using a reliable source like <a
+								href="https://randomkeygen.com/">https://randomkeygen.com/.</a>
+						</li>
+						<li class="lead"> The <b class="text-dark">JWT
+								Secret
+								Key</b> should be a randomly generated key
+							for
+							instance, <b class="text-dark">"kY4fai9sUT" is
+								an
+								example of such a JWT
+								Secret
+								Key.</b> This key is
+							essential
+							for
+							securing and validating JSON Web Tokens (JWTs)
+							within
+							our application.</li>
+
+						<li class="lead"><b class="text-dark">Change JWT
+								Secret
+								Key</b>
+							in <b class="text-dark">.env file</b> as
+							shown
+							in
+							the image below</li>
+					</ul>
+				</div>
+				<img src="assets/images/jwtsecretKey.png" />
+
+				<div class="list-section">
+					<ul>
+						<li class="lead" id="serverpath">If you don't have domain then you
+							can purchase the domain from <a
+								href="https://www.godaddy.com/en-in/offers/godaddy?isc=INGDYGON1&countryview=1&currencyType=INR&cdtl=c_17587465578.g_141169705674.k_aud-768727485587:kwd-88659201.a_655140280468.d_c.ctv_g&bnb=b&gad=1&gclid=EAIaIQobChMIotbLgI6lgQMVl9kWBR2VcAN1EAAYASAAEgLIX_D_BwE"
+								target="_blank">GoDaddy</a>,<a
+								href="https://www.hostinger.in/?ppc_campaign=google_search_brand&bidkw=hostinger&lo=1007760&gclid=EAIaIQobChMIoZOSmo6lgQMV12APAh2oFwaCEAAYASAAEgIRnPD_BwE"
+								target="_blank">hostinger</a>,<a
+								href="https://www.namecheap.com/?gclid=EAIaIQobChMIh9WHvI6lgQMV9ButBh2QOwBzEAAYASAAEgIC8vD_BwE"
+								target="_blank">Namecheap</a>,<a
+								href="https://www.hostgator.in/promo/linux-shared-hosting-offers?gad=1&gclid=EAIaIQobChMI6PfK7Y6lgQMVUCOtBh1QNAVBEAAYASAAEgKIGvD_BwE"
+								target="_blank">HostGator</a>.
+							<a id="serverkey"></a>
+						</li>
+
+						<li class="lead">
+							There in the <b class="text-dark">baseURL</b>
+							Replace the <b class="text-dark">https://yourdomain.com/
+							</b>to Your Domain.
+						</li>
+
+						<img src="assets/images/serverPath.png" />
+
+						<div class="lead">
+							<li class="lead" id="ServerKey">To access the redirection to the
+								firebase
+								server key
+								simply<a href="#fireBaseserverKey">Click Here</a>
+							</li>
+
+							<img src="assets/images/serverKeyFirebase.png" />
+							<li class="lead">Now setup is completed and let's
+								collect some credentials for the backend setup
+							</li>
+
+							<li class="lead">Make the changes like below in <b class="text-dark">.env
+								</b>file</li>
+
+
+							<img src="assets/images/configSetupbackend.png" />
+							<h4 class="section-title">Getting The Credential
+							</h4>
+							<div class="list-section">
+								<ul>
+									<p class="lead"><b>SECRET_KEY
+											:</b>
+										<a href="#secretKey">
+											"YOUR_SECRET_KEY"</a>
+									</P>
+									<p class="lead"><b>JWT_SECRET:</b>
+										<a href="#jwtsecretKey">"YOUR_JWT_SECRET"
+										</a>
+									</P>
+
+									<p class="lead"><b>
+											baseURL:</b>
+										<a href="#serverpath">"https://yourdomain.com/"
+										</a>
+									</p>
+									<p class="lead"><b>SERVER_KEY
+											:</b><a href="#ServerKey">"YOUR_SERVER_KEY"
+										</a>
+									</P>
+								</ul>
+								<br>
+
+							</div>
+							<li class="lead">Now save these credentials by
+								pressing
+								<b class="text-dark"> Ctrl + S</b>
+							</li>
+							<li class="lead">Next, execute the following command
+								in
+								your terminal: <b class="text-dark"> npm
+									start</b>.
+								This command will initiate the specified process
+								or
+								application.</li>
+							<img src="assets/images/npmStart.png" />
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 
+
+		<section id="salonPanelConfig">
+			<h4 class="section-title">Frontend Salon panel Configuration</h4>
+			<div class="list-section">
+				<ul>
+					<li class="lead">
+						Now open front end salon code in any code editor like <b>VS code</b>
+					</li>
+					<li class="lead">
+						Now Open Terminal (Check in the image below)
+					</li>
+					<img src="assets/images/frontendConfing.png" class="myImage" />
+
+					<li class="lead">For install packages (execute in
+						Terminal)
+						<b class="text-dark">npm install
+							--force</b>
+					</li>
+
+					<img src="assets/images/npmInstall.png" />
+
+					<li class="lead">
+						There in the <b class="text-dark">baseURL</b>
+						Replace
+						the <b class="text-dark">
+							https://yourdomain.com/</b> to
+						Your Domain.
+					</li>
+
+					<li class="lead">Modify the<b class="text-dark"> Secret
+							Key
+							within the "src > component > util > config.js"</b> file same as<b class="text-dark"><a
+								href="#secretKey">back-end</a></b>,
+						as shown
+						in
+						the image below</li>
+
+					<img src="assets/images/image.png" />
+					<li class="lead">To update the project name you can
+						<b>update project name</b> in <b>"title" tag
+						</b>(check in image below)
+					</li>
+
+					<li class="lead">To update the <b>project logo</b>,
+						simply change project logo with the <b>filename
+							"logo.png,"</b> ensuring that the <b>file name
+							remains unchanged.</b></li>
+					<img src="assets/images/changeName.png" />
+					<li class="lead">Next, execute the following command in
+						your
+						terminal: <b class="text-dark"> npm start</b>. This
+						command will initiate the specified process or
+						application.</li>
+					<img src="assets/images/npmStart.png" />
+
+					<li>Next, execute the following command in your
+						terminal:<b> npm run build</b>.
+
+					</li>
+					<img src="assets/images/npmrun.png" />
+					<li>
+						After the build
+						process is initiated, <b>follow below steps </b>
+						<ul>
+							<li>
+								Copy all the files and folders from the "build" directory from your salon frontend
+								project.
+							</li>
+							<li>create <b>"salon"</b> folder in your server.</li>
+							<li>Paste all the copied files and folders from the "build" directory into the
+								<b>"salon"</b> folder in your server.</li>
+							<li>By following these steps, admin panel will be deployed and accessible through your
+								server's URL. </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="list-section">
+				<ul>
+					<li class="lead">
+						Now,
+						<b>Login to salon panel </b> with email and password added in admin panel
+					</li>
+				</ul>
+
+
+				<img src="assets/images/salonPanel-login.png" />
+			</div>
+		</section> -->
+
+
+
+
+		<section class="doc-section contact-blog space-start" id="contact-us">
+			<div class="contact-blog-inner">
+				<h2 class="section-title mb-4">
+					<fontsninja-text id="fontsninja-text-51" class="fontsninja-family-1935">Want to talk with
+						us?</fontsninja-text>
+				</h2>
+				<p><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+						stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+						<circle cx="12" cy="12" r="4"></circle>
+						<path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94">
+						</path>
+					</svg>
+					<fontsninja-text id="fontsninja-text-54" class="fontsninja-family-1931">Email
+						<a href="mailto:technoproduct001@gmail.com">
+							: technoproduct001@gmail.com
+						</a>
+					</fontsninja-text>
+				</p>
+				<p>
+					<span><fontsninja-text id="fontsninja-text-66" class="fontsninja-family-1931">
+						</fontsninja-text>
+						<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<g>
+								<path fill="none" d="M0 0h24v24H0z"></path>
+								<path fill-rule="nonzero"
+									d="M7.253 18.494l.724.423A7.953 7.953 0 0 0 12 20a8 8 0 1 0-8-8c0 1.436.377 2.813 1.084 4.024l.422.724-.653 2.401 2.4-.655zM2.004 22l1.352-4.968A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.954 9.954 0 0 1-5.03-1.355L2.004 22zM8.391 7.308c.134-.01.269-.01.403-.004.054.004.108.01.162.016.159.018.334.115.393.249.298.676.588 1.357.868 2.04.062.152.025.347-.093.537a4.38 4.38 0 0 1-.263.372c-.113.145-.356.411-.356.411s-.099.118-.061.265c.014.056.06.137.102.205l.059.095c.256.427.6.86 1.02 1.268.12.116.237.235.363.346.468.413.998.75 1.57 1l.005.002c.085.037.128.057.252.11.062.026.126.049.191.066a.35.35 0 0 0 .367-.13c.724-.877.79-.934.796-.934v.002a.482.482 0 0 1 .378-.127c.06.004.121.015.177.04.531.243 1.4.622 1.4.622l.582.261c.098.047.187.158.19.265.004.067.01.175-.013.373-.032.259-.11.57-.188.733a1.155 1.155 0 0 1-.21.302 2.378 2.378 0 0 1-.33.288 3.71 3.71 0 0 1-.125.09 5.024 5.024 0 0 1-.383.22 1.99 1.99 0 0 1-.833.23c-.185.01-.37.024-.556.014-.008 0-.568-.087-.568-.087a9.448 9.448 0 0 1-3.84-2.046c-.226-.199-.435-.413-.649-.626-.89-.885-1.562-1.84-1.97-2.742A3.47 3.47 0 0 1 6.9 9.62a2.729 2.729 0 0 1 .564-1.68c.073-.094.142-.192.261-.305.127-.12.207-.184.294-.228a.961.961 0 0 1 .371-.1z">
+								</path>
+							</g>
+						</svg><fontsninja-text id="fontsninja-text-66" class="fontsninja-family-1931">
+							Whatsapp :
+						</fontsninja-text></span>
+					<a href="https://web.whatsapp.com/send?phone=7265800782" target="_blank">
+						<fontsninja-text id="fontsninja-text-71" class="fontsninja-family-1933">
+							+91 7265800782</fontsninja-text>
+					</a>
+				</p>
+
+				<div class="blog-1"></div>
+			</div>
+		</section>
+
+	</main>
+
+	<script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+
+</html>
